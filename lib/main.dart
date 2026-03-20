@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,7 +33,7 @@ class _MyAppState extends State<MyApp> {
 
         body: SafeArea(
           child: Container(
-            margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+            margin: EdgeInsets.symmetric(vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -54,10 +52,16 @@ class _MyAppState extends State<MyApp> {
                 Container(
                   height: 400,
                   width: 300,
-                  color: Colors.green,
-                  child: Text(
-                    "Container 2",
-                    textAlign: TextAlign.center,
+                  margin: EdgeInsets.only(left: 20, right: 20),
+                  child: Card(
+                    color: Colors.green,
+                    child: ListTile(
+                      textColor: Colors.white,
+                      title: Align(
+                        alignment: Alignment.topCenter,
+                        child: Text("Hello World"),
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(
