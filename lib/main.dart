@@ -4,8 +4,17 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() {
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  int nPressed = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +29,15 @@ class MyApp extends StatelessWidget {
           titleTextStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
         body: Center(
-          child: Text('Hello World!'),
+          child: Text('Button Pressed: $nPressed'),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            print("Button pressed");
+            setState(() {
+              nPressed++;
+            });
           },
+
           backgroundColor: Colors.blue[700],
           foregroundColor: Colors.white,
           child: Icon(Icons.add),
