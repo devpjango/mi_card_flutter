@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,14 +35,47 @@ class _MyAppState extends State<MyApp> {
 
         body: SafeArea(
           child: Container(
-            height: 100.0,
-            width: 500.0,
             margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            color: Colors.red,
-            child: Text(
-              'Button Pressed: $nPressed',
-              textAlign: TextAlign.center,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Container(
+                  height: 200.0,
+                  width: 300.0,
+                  color: Colors.red,
+                  child: Text(
+                    'Button Pressed: $nPressed',
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  height: 400,
+                  width: 300,
+                  color: Colors.green,
+                  child: Text(
+                    "Container 2",
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  height: 100,
+                  width: 300,
+                  color: Colors.yellow,
+                  child: Text(
+                    "Container 3",
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+              ],
             ),
           ),
         ),
